@@ -16,10 +16,10 @@ V="$V -v $XSOCK:$XSOCK"
 V="$V -v $XAUTH:$XAUTH"
 V="$V -v /tmp/.X11-unix:/tmp/.X11-unix"
 
-# E="-e XAUTHORITY=$XAUTH"
-# N="-h bofh --name=bofh"
-
-#M="--shm-size=1g"
+# Waiting for docker 1.10
+# https://github.com/docker/docker/pull/16168/commits
+# https://github.com/NIWAHideyuki/docker/commit/5aeaf2a0c4236711e0981515d8627b30e22a1637
+# M="--shm-size=1g"
 
 #  http://stackoverflow.com/a/25280523
 xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
